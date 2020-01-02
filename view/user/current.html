@@ -1,0 +1,17 @@
+{{ define "userCurrent" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<form action="/user/save" method="POST">
+	<input type="text" hidden name="Id" value="{{ .Id }}">
+	<input type="text" name="Login" value="{{ .Login }}"> <br/>
+	<input type="text" name="Password" value="{{ .Password }}"> <br/>
+	<input type="submit" value="save">
+</form>
+</body>
+</html>
+{{ end }}

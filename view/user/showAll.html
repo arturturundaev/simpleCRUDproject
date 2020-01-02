@@ -1,0 +1,23 @@
+{{define "usershowAll"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>List of Users</h1>
+<table>
+{{range $entity := .}}
+    <tr>
+        <td>{{$entity.Id}}</td>
+        <td>{{.Login}}</td>
+        <td>{{.Password}} <a href="/user/delete/{{$entity.Id}}">delete</a>
+        <a href="/user/edit/{{$entity.Id}}">edit</a> </td>
+    </tr>
+{{end}}
+</table>
+<a href="/user/add">Add</a>
+</body>
+</html>
+{{end}}
